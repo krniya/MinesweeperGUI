@@ -1,11 +1,16 @@
+import settings
 from board import Board
 from game import Game
 
-prob = 0.1
-size = (9,9)
-board = Board(size, prob)
-screenSize = (800,800)
 
-game = Game(board, screenSize)
+def main():
+    prob = settings.PROBABILITY
+    size = settings.SIZE
+    board = Board(size, prob)
+    screenSize = settings.SCREEN_SIZE
+    game = Game(board, screenSize)
+    game.run()
 
-game.run()
+
+if __name__ == '__main__':
+    main()
